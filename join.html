@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Registration Form</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <nav>
+        <div class="nav__logo">
+            <a href="#"><img src="images/logo.png" alt="logo" /></a>
+          </div> 
+    </nav>
+    <div class="container">
+        <section id="personal-info">
+            <h2>Personal Information</h2>
+            <form>
+                <label for="name">Name:</label> <br>
+                <input type="text" id="name" name="name" required><br><br>
+                
+                <label for="email">Email:</label> <br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <label for="phone">Phone:</label> <br>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br><br>
+
+                <label for="photo">Upload Photo of your ID:</label> <br>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+                <br><br>
+
+                <label for="email">Height(in feet):</label> <br>
+                <input type="height" id="height" name="height" required><br><br>
+
+                <label for="weight">weight(IN KG):</label>
+                <input type="Weight" id="weight" name="Weight" required><br><br>
+               
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob"><br><br>
+                
+                <button type="button" onclick="nextSection('membership')">Next</button>
+            </form>
+        </section>
+
+        <section id="membership" style="display: none;">
+            <h2>Membership</h2>
+            <form>
+                <label for="plan">Select Membership Plan:</label>
+                <select id="plan" name="plan">
+                    <option value="basic">Monthly</option>
+                    <option value="standard">Yearly</option>
+                    <option value="premium">Personal Treaning</option>
+                </select><br><br>
+                
+                <button type="button" onclick="prevSection('personal-info')">Previous</button>
+                <button type="button" onclick="nextSection('payment')">Next</button>
+            </form>
+        </section>
+
+        <section id="payment" style="display: none;">
+            <h2>Payment</h2>
+            <form>
+                <label for="card">Card Number:</label>
+                <input type="text" id="card" name="card" required><br><br>
+                
+                <label for="expiry">Expiry Date:</label>
+                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required><br><br>
+                
+                <button type="button" onclick="prevSection('membership')">Previous</button>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
